@@ -372,7 +372,8 @@ async function generate() {
         }],
         generationConfig: {
           temperature: 0.3,
-          maxOutputTokens: 2000,
+          maxOutputTokens: 4000,
+          responseMimeType: "application/json"
         }
       })
     });
@@ -401,7 +402,7 @@ async function generate() {
   } catch (e) {
     document.getElementById("procView").style.display = "none";
     document.getElementById("inputView").style.display = "block";
-    showErr("Error: " + e.message + " — Please check your API key and try again.");
+    showErr("Error: " + e.message + " — Check the model, API response, or transcript format.");
   }
 }
 
